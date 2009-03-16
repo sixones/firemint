@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://firemint/skin/overlay.css"  type="text/css"?>
+
+<prefwindow id="firemint_settings"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	persist="screenX screenY" windowtype="firemint_settings_window">
+
+	<script type="application/x-javascript" src="chrome://firemint/content/classes/exposures.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/classes/gui.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/classes/launcher.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/classes/parse.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/classes/request.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/classes/view.js"/>
+	
+	<script type="application/x-javascript" src="chrome://firemint/content/models/call.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/models/mint.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/models/mint_settings.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/models/pepper.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/models/settings.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/models/stdobj.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/models/visit.js"/>
+	
+	<script type="application/x-javascript" src="chrome://firemint/content/firemint.js"/>
+	<script type="application/x-javascript" src="chrome://firemint/content/settings.js"/>
+	
+	<prefpane id="firemint_settings_expose" label="Firemint Settings">
+		<preferences>
+			<preference id="pref_meta_string" name="extensions.firemint.meta_string" type="string" />
+			<preference id="pref_update_tick" name="extensions.firemint.update_tick" type="int" />
+		</preferences>
+		<tabbox>
+			<tabs>
+				<tab label="Mints" />
+				<tab label="Firemint" />
+				<tab label="Other Services" />
+				<tab label="Debug" style="display: none;" />
+			</tabs>
+			<tabpanels minheight="270">
+				<tabpanel orient="vertical">
+					<description>Below you can define a number of different Mint installations, each Mint requires its own expose pepper and API key. </description>
+
+					<groupbox>
+						<grid flex="1">
+							<coloumns>
+								<column flex="0" />
+								<column flex="2" />
+								<column flex="2" />
+							</coloumns>
+							<rows id="firemint_mints_list">
+								<row id="firemint_mints_empty">
+									<label flex="5">there are no mints defined yet, add a new one below</label>
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+					<groupbox>
+						<hbox>
+							<label class="input" control="api_key" value="API Key:" />
+							<textbox flex="1" id="api_key" />
+						</hbox>
+						<hbox>
+							<label class="input" control="url" value="Mint Url:" />
+							<textbox flex="1" id="url" />
+						</hbox>
+						<hbox>
+							<label class="input" control="default" value="Default Mint:" />
+							<checkbox flex="1" id="default" />
+						</hbox>
+						<hbox>
+							<button id="clear_mint_button" onclick="s.clear_mint();" label="clear" style="margin-left: 115px" />
+							<spacer flex="2" />
+							<button id="add_mint_button" onclick="s.add_mint();" label="add" />
+							<button id="save_mint_button" onclick="s.save_mint();" label="save" style="display: none;" />
+						</hbox>
+					</groupbox>
+				</tabpanel>
+				<tabpanel orient="vertical">
+					<description>
+						Firemint UI settings
+					</description>
+				
+					<groupbox>
+						<hbox>
+							<label class="input" control="update_tick" value="Meta String:" />
+							<textbox flex="1" preference="pref_meta_string" id="update_tick" />
+						</hbox>
+						<hbox>
+							<label class="input" control="update_tick" value="Update Every:" />
+							<menulist flex="1" preference="pref_update_tick" id="update_tick">
+								<menupopup preference-editable="true">
+									<menuitem value="5" label="5 Minutes" />
+									<menuitem value="15" label="15 Minutes" />
+									<menuitem value="30" label="30 Minutes" />
+									<menuitem value="45" label="45 Minutes" />
+									<menuitem value="60" label="60 Minutes" />
+								</menupopup>
+							</menulist>
+						</hbox>
+					</groupbox>
+				</tabpanel>
+				<tabpanel orient="vertical">
+					<description>
+						for other services, like feedburner stats and maybe wordpress. we shall see!
+					</description>
+				</tabpanel>
+				<tabpanel orient="vertical" style="display: none;">
+					<description>
+						Here you can find a debug log which is outputted while firemint runs. This wont really be useful except for fixing bugs.
+					</description>
+					<textbox id="firemint_settings_debug_text" multiline="true" rows="13" />
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</prefpane>
+</prefwindow>

@@ -1,0 +1,60 @@
+#firemint_box {
+	background: url(chrome://firemint/skin/mint_icon_20.png) no-repeat;
+}
+
+#firemint_debug {
+	height: 400px;
+	width: 300px;
+}
+
+#firemint_settings label.input {
+	margin-top: 5px;
+	text-align: right;
+	width: 100px;
+}
+
+#firemint_settings description {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+grid {
+	margin: 5px;
+	margin-bottom: 10px;
+}
+
+grid rows row {
+	padding: 5px;
+	padding-top: 6px;
+	padding-bottom: 2px;
+}
+
+grid rows row:hover {
+	background-color: #FFF;
+}
+
+grid rows row.selected,
+grid rows row.selected:hover {
+	background-color: #EFF8CE;
+}
+
+grid rows row#firemint_mints_empty:hover {
+	background-color: inherit;
+}
+
+grid row.head,
+grid row.head:hover {
+	background-color: #999;
+	padding: 2px;
+}
+
+#firemint_settings select {
+#firemint_settings textbox {
+	border: solid 1px #C2C2C2;
+	margin-right: 50px;
+}
+
+#firemint_settings button {
+	margin: auto;
+	border: solid 1px #000;
+}

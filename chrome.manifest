@@ -1,0 +1,5 @@
+content		firemint								chrome/content/
+
+overlay		chrome://browser/content/browser.xul	chrome://firemint/content/overlay.xul
+
+skin		firemint								default											skin/

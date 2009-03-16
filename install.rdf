@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#" xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>firemint@84degrees.com</em:id>
+		<em:version>2.0.1.9</em:version>
+		<em:type>2</em:type>
+		<em:name>Firemint</em:name>
+		<em:description>Mint Stats in your browser</em:description>
+		<em:creator>Adam Livesley</em:creator>
+		<em:contributor>Shaun Inman</em:contributor>
+		<em:homepageURL>http://84degrees.com/firemint/</em:homepageURL>
+		<em:updateURL>https://84degrees.com/builds/firemint/update.rdf</em:updateURL>
+		<em:iconURL>chrome://firemint/skin/mint_icon_48.png</em:iconURL>
+		<em:optionsURL>chrome://firemint/content/settings.xul</em:optionsURL>
+		
+		<!-- firefox -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>1.5</em:minVersion>
+				<em:maxVersion>3.5</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+
+		<!-- flock -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{a463f10c-3994-11da-9945-000d60ca027b}</em:id>
+				<em:minVersion>0.5.x</em:minVersion>
+				<em:maxVersion>2.5</em:maxVersion>
+			</Description>
+ 		</em:targetApplication>
+	</Description>
+</RDF>

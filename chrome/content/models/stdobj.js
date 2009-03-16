@@ -1,0 +1,4 @@
+function firemint_stdobj()
+{
+	
+};
